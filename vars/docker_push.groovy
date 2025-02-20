@@ -6,9 +6,9 @@ def call(String ProjecName, String ImageTag, String DockerCred){
     sh 'echo $PASSWORD | docker login -u $USERNAME --password-stdin'
     
     // Tag the Docker image
-    // sh "docker image tag monitoring-app:latest  ${env.USERNAME}/{ProjectName}:{ImageTag}"
+    // sh "docker image tag monitoring-app:latest  $USERNAME/{ProjectName}:{ImageTag}"
     
     // Push the Docker image
-    sh "docker push ${env.USERNAME}/${ProjectName}:${ImageTag}"
+    sh "docker push $USERNAME/${ProjectName}:${ImageTag}"
   }
 }
