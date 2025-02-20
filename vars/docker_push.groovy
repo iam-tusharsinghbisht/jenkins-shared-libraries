@@ -1,4 +1,4 @@
-def call(String ProjecName, String ImageTag, String DockerUsername String DockerCred){
+def call(String ProjecName, String ImageTag, String DockerUsername, String DockerCred){
   withCredentials([usernamePassword(credentialsId: DockerCred, 
                                                  usernameVariable: 'USERNAME', 
                                                  passwordVariable: 'PASSWORD')]){
