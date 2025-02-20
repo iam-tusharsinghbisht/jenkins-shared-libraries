@@ -4,11 +4,8 @@ def call(String ProjecName, String ImageTag, String DockerCred){
                                                  passwordVariable: 'PASSWORD')]){
     // Securely log in to Docker
     sh 'echo $PASSWORD | docker login -u $USERNAME --password-stdin'
-    
-    // Tag the Docker image
-    // sh "docker image tag monitoring-app:latest  $USERNAME/{ProjectName}:{ImageTag}"
-    
-    // Push the Docker image
-    sh "docker push $USERNAME/${ProjectName}:${ImageTag}"
   }
+    // Push the Docker image
+  sh "echo "Pusing Docker Image"
+  sh "docker push $USERNAME/${ProjectName}:${ImageTag}"
 }
