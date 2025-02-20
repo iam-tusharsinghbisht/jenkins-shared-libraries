@@ -1,5 +1,5 @@
 def call(String ProjecName, String ImageTag, String DockerCred){
-  withCredentials([usernamePassword(credentialsId: ${DockerCred}, 
+  withCredentials([usernamePassword(credentialsId: DockerCred, 
                                                  usernameVariable: 'USERNAME', 
                                                  passwordVariable: 'PASSWORD')]){
   sh "docker login -u ${env.USERNAME} -p ${env.PASSWORD}"
