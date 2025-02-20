@@ -6,6 +6,6 @@ def call(String ProjecName, String ImageTag, String DockerCred){
     sh 'echo $PASSWORD | docker login -u $USERNAME --password-stdin'
   }
     // Push the Docker image
-  sh "echo "Pusing Docker Image"
+  sh 'echo "Pusing Docker Image"'
   sh "docker push $USERNAME/${ProjectName}:${ImageTag}"
 }
